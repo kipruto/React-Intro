@@ -1,6 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-const myElement=<h1>React is {5+5} times better than JSX!</h1>
+const myElement=(
+    <ul>
+        <li>Apples</li>
+        <li>Bananas</li>
+        <li>Cheries</li>
+    </ul>
+)
 
 ReactDOM.render(myElement, document.getElementById('root'));
