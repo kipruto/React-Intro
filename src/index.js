@@ -2,21 +2,25 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 class Car extends React.Component {
-    render() {
-        return <h2>I am a {this.props.brand.model}!</h2>
+    constructor(props) {
+        super(props);
+        this.state = {
+            brand: "Toyota",
+            model: "Premio",
+            color: "Black",
+            year: 2011
+        };
     }
-}
-
-class Garage extends React.Component {
     render() {
-        const carinfo = { name: "Toyota", model: "Premio" }
         return (
             <div>
-                <h1>Who lives in my Garage?</h1>
-                <Car brand={carinfo} />
+                <h1>My {this.state.brand}</h1>
+                <p>
+                    It is a {this.state.color} {this.state.model} from {this.state.year}
+                </p>
             </div>
         );
     }
 }
 
-ReactDOM.render(<Garage />, document.getElementById("root"));
+ReactDOM.render(<Car />, document.getElementById("root"));
