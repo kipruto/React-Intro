@@ -3,17 +3,17 @@ import ReactDOM from 'react-dom'
 
 class Car extends React.Component {
     render() {
-        return <h2>I am a {this.props.brand}!</h2>
+        return <h2>I am a {this.props.brand.model}!</h2>
     }
 }
 
 class Garage extends React.Component {
     render() {
-        const carname = "Toyota"
+        const carinfo = { name: "Toyota", model: "Premio" }
         return (
             <div>
                 <h1>Who lives in my Garage?</h1>
-                <Car brand={carname} />
+                <Car brand={carinfo} />
             </div>
         );
     }
