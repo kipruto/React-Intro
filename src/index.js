@@ -11,6 +11,9 @@ class Car extends React.Component {
             year: 2011
         };
     }
+    changeColor = () => {
+        this.setState({ color: "Blue" })
+    }
     render() {
         return (
             <div>
@@ -18,6 +21,7 @@ class Car extends React.Component {
                 <p>
                     It is a {this.state.color} {this.state.model} from {this.state.year}
                 </p>
+                <button type="button" onClick={this.changeColor} >Change Color</button>
             </div>
         );
     }
