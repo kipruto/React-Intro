@@ -1,30 +1,22 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-class Car extends React.Component {
+class Header extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            brand: "Toyota",
-            model: "Premio",
-            color: "Black",
-            year: 2011
+            favouriteColor: "Red"
         };
     }
-    changeColor = () => {
-        this.setState({ color: "Blue" })
+    static getDerivedStateFromProps(props, state) {
+        return { favouriteColor: props.favCol };
     }
     render() {
         return (
-            <div>
-                <h1>My {this.state.brand}</h1>
-                <p>
-                    It is a {this.state.color} {this.state.model} from {this.state.year}
-                </p>
-                <button type="button" onClick={this.changeColor} >Change Color</button>
-            </div>
+            <h1>My favorite color is {this.state.favouriteColor}</h1>
         );
     }
+
 }
 
-ReactDOM.render(<Car />, document.getElementById("root"));
+ReactDOM.render(<Header favCol="Green" />, document.getElementById("root"));
