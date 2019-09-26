@@ -1,8 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-function Car() {
-    return <h2>Hi, I am also a Car!</h2>
+class Car extends React.Component {
+    constructor() {
+        super()
+        this.state = { color: "purple" };
+    }
+
+    render() {
+        return <h2>I am a {this.state.color} Car!</h2>
+    }
 }
 
 ReactDOM.render(<Car />, document.getElementById("root"));
