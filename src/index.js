@@ -1,13 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-class Football extends React.Component {
-    shoot = (a) => {
-        alert(a);
-    }
+class MyForm extends React.Component {
     render() {
-        return (<button onClick={() => this.shoot("Goal!!")}>Take the shot</button>)
+        return (
+            <form>
+                <h1>Hello</h1>
+                <p>Enter your name:</p>
+                <input type="text" />
+            </form>
+        )
     }
 }
 
-ReactDOM.render(<Football />, document.getElementById("root"));
+ReactDOM.render(<MyForm />, document.getElementById("root"));
