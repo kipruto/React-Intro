@@ -1,14 +1,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-/* A good practice is to put the event handler as a method in the component class */
 class Football extends React.Component {
-    shoot() {
-        alert("Great shot!")
+    constructor(props) {
+        super(props)
+        this.shoot = this.shoot.bind(this)
     }
-
+    shoot() {
+        alert(this);
+        /*
+        Thanks to the binding in the constructor function,
+        the 'this' keyword now refers to the component object
+        */
+    }
     render() {
-        /**For methods in React, the this keyword should represent the component that owns the method */
         return (<button onClick={this.shoot}>Take the shot</button>)
     }
 }
