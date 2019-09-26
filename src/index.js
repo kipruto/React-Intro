@@ -9,10 +9,11 @@ class Car extends React.Component {
 
 class Garage extends React.Component {
     render() {
+        const carname = "Toyota"
         return (
             <div>
                 <h1>Who lives in my Garage?</h1>
-                <Car brand="Toyota" />
+                <Car brand={carname} />
             </div>
         );
     }
